@@ -33,3 +33,38 @@ docker run -d --name dam_web1 -p 8000:80 httpd:2.4     #Copiar para crear el con
 ```
 #### 4. Utiliza bind mount para que el directorio del apache2 'htdocs' esté montado un directorio que tu elijas.
 
+##### Primero deberemos crear un directorio
+```
+mkdir /home/vboxuser/web     #Copiar para crear el directorio
+```
+
+##### A continuacion deberemos crear el contenedor con el directorio con el siguiente comando, borrando previamente el anterior para poder crearlo de nuevo
+```
+docker run -d --name dam_web1 -p 8000:80 -v /home/vboxuser/web:/usr/local/apache2/htdocs httpd:2.4   #Copiar para crear el contenedor con puerto y fichero asignados
+```
+
+#### 5. Realiza un 'hola mundo' en html y comprueba que accedes desde el navegador
+
+##### Primero deberemos crear un archivo index.html en el directorio creado anteriormente, para ello nos colocaremos dentro de el directorio y ponemos el siguiente comando
+```
+nano index.html    #Copiar para crear el archivo.html
+```
+##### Al crearlo nos saldra al siguiente interfaz donde pondremos la siguiente estructura para crear un encabezado de hola mundo
+
+![](img/2.png)
+
+##### A continuacion pegamos en el navegador la direccion http://localhost:8000 para comprobar que funciona
+
+![](img/3.png)
+
+
+
+
+
+
+
+
+
+
+
+
