@@ -1,1 +1,35 @@
 # Tarea3SXE
+
+### En esta tarea se realizaran una serie de tareas especificadas a continuacion con los respectivos pasos para hacerlas correctamente.
+
+#### 1. Descarga la imagen 'httpd' y comprueba que está en tu equipo.
+
+##### Para descargar la imagen httpd con el tag 2.4 primero deberemos utilizar el siguiente comando
+```
+docker pull httpd:2.4     #Copiar para instalar la imagen
+```
+##### Para comprbar que esta utilizaremos el siguiente comando
+```
+docker images     #Copiar para revisar las imagenes de docker instaladas
+```
+
+![](img/1.png)
+
+#### 2. Crea un contenedor con el nombre 'dam_web1'.
+
+##### Para crear un contenedor debemos utilizar el siguiente comando
+```
+docker run -d --name dam_web1 httpd:2.4     #Copiar para crear el contedor
+                                            #Cambiar el nombre en caso de necesitarlo
+```
+
+#### 3. Si quieres poder acceder desde el navegador de tu equipo, ¿que debes hacer?
+
+##### Para acceder desde navegador primero debemos borrar el contenedor ya creado y crear uno nuevo con un puerto asignado
+
+```
+docker stop dam_web1 y docker rm dam_web1    #Copiar para borrar el contenedor
+docker run -d --name dam_web1 -p 8000:80 httpd:2.4     #Copiar para crear el contenedor con un puerto asigado
+```
+#### 4. Utiliza bind mount para que el directorio del apache2 'htdocs' esté montado un directorio que tu elijas.
+
