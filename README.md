@@ -57,8 +57,26 @@ nano index.html    #Copiar para crear el archivo.html
 
 ![](img/3.png)
 
+#### 6. Crea otro contenedor 'dam_web2' con el mismo bind mount y a otro puerto, por ejemplo 9080.
 
+##### Para crear este otro contenedor deberemos hacer el mismo comando que anteriormente cambiando el puerto y el nombre del contenedor
+```
+docker run -d --name dam_web2 -p 9080:80 -v /home/vboxuser/web:/usr/local/apache2/htdocs httpd:2.4    #Copiar para crear el contenedor con el nuevo nombre y puerto
+```
+#### 7. Comprueba que los dos servidores 'sirven' la misma página, es decir, cuando consultamos en el navegador
 
+##### Comprobamos que funciona coomo en el apartado anateior cambiando el puerto de la ruta http://localhost:9080 y las 2 muestran el mismo hola mundo
+
+![](img/4.png)
+
+#### 8. Realiza modificaciones de la página y comprueba que los dos servidores 'sirven' la misma página
+
+#### Volvemos a modificarlo con el mismo comando que anteriormente y comprobamos en el navegador que funciona
+```
+nano index.html       #Copiar para modificar el archivo
+```
+
+![](img/5.png)![](img/6.png)
 
 
 
